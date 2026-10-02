@@ -15,7 +15,7 @@ pipeline {
         stage("build") {
             steps {
                 sh echo "builing package"
-                sh "echo $(NAME)"
+                sh "echo ${NAME}"
             }
         }
         stage("running test cases") {
