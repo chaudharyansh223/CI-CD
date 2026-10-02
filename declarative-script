@@ -14,13 +14,13 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                sh 'mvn "builing package"'
+                sh 'mvn builing package'
                 sh "echo ${NAME}"
             }
         }
         stage("running test cases") {
             steps {
-                sh 'mvn "testing cases is running"'
+                sh 'mvn testing cases is running'
             }
         }
         stage("testing server") {
