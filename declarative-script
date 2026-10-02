@@ -5,7 +5,7 @@ pipeline {
         }
     }
     tools {
-        Maven "jenkins-maven"
+        maven "jenkins-maven"
     }
 
     environment {
