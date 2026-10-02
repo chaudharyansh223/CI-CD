@@ -14,18 +14,18 @@ pipeline {
     stages {
         stage("build") {
             steps {
-                sh echo "builing package"
+                sh "builing package"
                 sh "echo ${NAME}"
             }
         }
         stage("running test cases") {
             steps {
-                sh echo "testing cases is running"
+                sh "testing cases is running"
             }
         }
         stage("testing server") {
             steps {
-                sh echo "deploying to testing server"
+                sh "deploying to testing server"
                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '1f1d29a4-212b-43b5-9dae-d4da0b4edfb4', path: '', url: 'http://192.168.247.152:8082/')], contextPath: 'page/', war: '**/*.war'
             }
         }
@@ -35,7 +35,7 @@ pipeline {
                 ok "continue"
                 }
             steps {
-                sh echo "deploying to production server"
+                sh "deploying to production server"
                 deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: '1f1d29a4-212b-43b5-9dae-d4da0b4edfb4', path: '', url: 'http://192.168.247.152:8082/')], contextPath: 'page/', war: '**/*.war'
             }
         }
